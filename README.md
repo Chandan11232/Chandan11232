@@ -5,9 +5,7 @@
 <img align="center" height="150" src="https://steamuserimages-a.akamaihd.net/ugc/776234950410894383/64AAB79ABC73B74A688A2A9E5D5279B8C821DDC7/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"  />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=HoneyPaptan&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
-</div>
+
 
 ###
 
