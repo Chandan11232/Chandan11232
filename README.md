@@ -1,9 +1,7 @@
 <h2 align="left">👋 Hello there! I'm Chandan Garg, a skilled Full Stack Web Developer and a Node.js enthusiast.</h2>
 
 ###
-<div align="center">
-<img align="center" height="150" src="https://steamuserimages-a.akamaihd.net/ugc/776234950410894383/64AAB79ABC73B74A688A2A9E5D5279B8C821DDC7/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"  />
-</div>
+
 
 
 
