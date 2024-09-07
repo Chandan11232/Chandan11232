@@ -3,7 +3,7 @@
 ###
 
 <div align="center" dir="auto">
-  <img src="https://c0.wallpaperflare.com/preview/997/717/184/artificial-intelligence-codes-developing-screen.jpg"/>
+  <img height="150" src="https://c0.wallpaperflare.com/preview/997/717/184/artificial-intelligence-codes-developing-screen.jpg"/>
 </div>
 
 
