@@ -2,7 +2,7 @@
   <img src="assets/hero.svg" width="100%" alt="Chandan Garg — terminal intro" />
 </div>
 
-<h2 align="left">👋 Hello there! I'm Chandan Garg, a Full Stack Web Developer and Node.js enthusiast.</h2>
+<h2 align="left"> Hello there! I'm Chandan Garg, a Full Stack Web Developer and Node.js enthusiast.</h2>
 
 I build AI-native tools that turn messy inputs (a spoken sentence, a stack trace, an open question) into something you can act on. Below are three of them, with their pipelines running live.
 
@@ -38,7 +38,7 @@ I build AI-native tools that turn messy inputs (a spoken sentence, a stack trace
 
 ---
 
-## 🚀 Featured projects · live workflows
+##  Featured projects · live workflows
 
 ### 🎙 [VoiceGraph](https://github.com/Chandan11232/voicegraph) — *say the system, shape it by hand*
 
@@ -55,7 +55,7 @@ A voice-first architecture whiteboard. Describe a system out loud and it becomes
 
 ---
 
-### 🕵 [GraphSleuth](https://github.com/Chandan11232/GraphSleuth) — *from bug report to verified fix*
+###  [GraphSleuth](https://github.com/Chandan11232/GraphSleuth) — *from bug report to verified fix*
 
 <a href="https://codebase-detector.vercel.app"><img src="assets/graphsleuth.svg" width="100%" alt="GraphSleuth workflow: bug report → FalkorDB code graph trace → ranked suspects → sandbox verify → PR draft" /></a>
 
@@ -70,7 +70,7 @@ A bug-investigation agent that reasons over a FalkorDB graph of your codebase. G
 
 ---
 
-### 🧠 [ResearchMind](https://github.com/Chandan11232/research-mind) — *research that iterates until it's sure*
+###  [ResearchMind](https://github.com/Chandan11232/research-mind) — *research that iterates until it's sure*
 
 <a href="https://research-mind.vercel.app"><img src="assets/researchmind.svg" width="100%" alt="ResearchMind workflow: question → plan → Tavily search → analyze → loop until done → report" /></a>
 
@@ -85,7 +85,7 @@ An iterative AI research app. A LangGraph workflow plans, searches the web with 
 
 ---
 
-## 📫 Let's connect
+##  Let's connect
 
 <div align="center">
   <a href="mailto:cgarg2461@gmail.com" target="_blank">
