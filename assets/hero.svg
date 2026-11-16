@@ -1,39 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="230" viewBox="0 0 960 230">
-  <defs>
-    <linearGradient id="bar" x1="0" x2="1">
-      <stop offset="0" stop-color="#a371f7"/><stop offset=".5" stop-color="#39d0d8"/><stop offset="1" stop-color="#3fb950"/>
-    </linearGradient>
-  </defs>
-  <style>
-    .mono{font:15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-    .p{fill:#3fb950}.c{fill:#e6edf3}.o{fill:#8b949e}.hl{fill:#a371f7}.cy{fill:#39d0d8}.pk{fill:#f778ba}
-    .ln{opacity:0}
-    .l1{animation:a1 12s infinite}.l2{animation:a2 12s infinite}.l3{animation:a3 12s infinite}
-    .l4{animation:a4 12s infinite}.l5{animation:a5 12s infinite}.l6{animation:a6 12s infinite}
-    @keyframes a1{0%,2%{opacity:0}4%,94%{opacity:1}100%{opacity:0}}
-    @keyframes a2{0%,10%{opacity:0}12%,94%{opacity:1}100%{opacity:0}}
-    @keyframes a3{0%,22%{opacity:0}24%,94%{opacity:1}100%{opacity:0}}
-    @keyframes a4{0%,30%{opacity:0}32%,94%{opacity:1}100%{opacity:0}}
-    @keyframes a5{0%,42%{opacity:0}44%,94%{opacity:1}100%{opacity:0}}
-    @keyframes a6{0%,50%{opacity:0}52%,94%{opacity:1}100%{opacity:0}}
-    .cur{animation:blink 1s steps(1) infinite}
-    @keyframes blink{50%{opacity:0}}
-    .sweep{animation:sweep 4s linear infinite}
-    @keyframes sweep{from{transform:translateX(-300px)}to{transform:translateX(960px)}}
-  </style>
-  <rect width="960" height="230" rx="14" fill="#0d1117" stroke="#30363d"/>
-  <rect width="960" height="34" rx="14" fill="#161b22"/>
-  <rect y="20" width="960" height="14" fill="#161b22"/>
-  <circle cx="22" cy="17" r="6" fill="#ff5f56"/><circle cx="42" cy="17" r="6" fill="#ffbd2e"/><circle cx="62" cy="17" r="6" fill="#27c93f"/>
-  <text x="480" y="22" text-anchor="middle" class="mono o" font-size="12">chandan@dev: ~</text>
-  <rect class="sweep" y="33" width="300" height="2" fill="url(#bar)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" fill="none">
+<defs>
+<pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#1a1a1a"/></pattern>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0a0a" stop-opacity="0"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient>
+<filter id="glow" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 
-  <g class="mono">
-    <text x="28" y="70" class="ln l1"><tspan class="p">➜</tspan><tspan class="cy"> ~ </tspan><tspan class="c">whoami</tspan></text>
-    <text x="28" y="94" class="ln l2"><tspan class="hl" font-weight="700">Chandan Garg</tspan><tspan class="o"> — Full Stack Web Developer · Node.js enthusiast · building AI-native tools</tspan></text>
-    <text x="28" y="126" class="ln l3"><tspan class="p">➜</tspan><tspan class="cy"> ~ </tspan><tspan class="c">ls ./projects --running</tspan></text>
-    <text x="28" y="150" class="ln l4"><tspan class="pk">🎙 voicegraph/</tspan><tspan class="o">     </tspan><tspan class="cy">🕵 graphsleuth/</tspan><tspan class="o">     </tspan><tspan class="p">🧠 researchmind/</tspan></text>
-    <text x="28" y="182" class="ln l5"><tspan class="p">➜</tspan><tspan class="cy"> ~ </tspan><tspan class="c">./ship --ideas-to-production</tspan></text>
-    <text x="28" y="206" class="ln l6"><tspan class="o">[</tspan><tspan class="p">████████████████████</tspan><tspan class="o">] 100% · workflows live below ↓ </tspan><tspan class="c cur">▋</tspan></text>
-  </g>
+</defs>
+<style>
+.lab{font:500 10.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#737373;letter-spacing:1.6px}
+.t{font:600 13.5px Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#ededed}
+.s{font:400 10.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#737373}
+.n{font:500 10px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#525252}
+.log{font:400 11.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#a3a3a3}
+.k{fill:#ededed}
+.node{fill:#0f0f0f;stroke:#262626;stroke-width:1}
+.wire{fill:none;stroke:#262626;stroke-width:1}
+.dash{fill:none;stroke:#333;stroke-width:1;stroke-dasharray:3 4}
+.live{animation:live 2.4s ease-in-out infinite}
+@keyframes live{0%,100%{opacity:1}50%{opacity:.35}}
+
+.big{font:600 44px Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#fafafa;letter-spacing:-1.2px}
+.role{font:400 16px Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#a3a3a3}
+.meta{font:400 11.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#737373}
+.hl{font:500 12px Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#d4d4d4}
+.cur{animation:cur 1s steps(1) infinite}@keyframes cur{50%{opacity:0}}
+.ring{transform-box:fill-box;transform-origin:center;animation:ring 3.6s ease-out infinite}
+@keyframes ring{from{transform:scale(1);opacity:.5}to{transform:scale(2.6);opacity:0}}
+.b0{stroke-dasharray:28 343;animation:b0 4.2s cubic-bezier(.45,0,.55,1) infinite;animation-delay:0.0s}@keyframes b0{0%{stroke-dashoffset:28}60%,100%{stroke-dashoffset:-143}}
+.b1{stroke-dasharray:28 353;animation:b1 4.2s cubic-bezier(.45,0,.55,1) infinite;animation-delay:1.4s}@keyframes b1{0%{stroke-dashoffset:28}60%,100%{stroke-dashoffset:-153}}
+.b2{stroke-dasharray:28 317;animation:b2 4.2s cubic-bezier(.45,0,.55,1) infinite;animation-delay:2.8s}@keyframes b2{0%{stroke-dashoffset:28}60%,100%{stroke-dashoffset:-117}}
+</style>
+<rect x=".5" y=".5" width="959" height="299" rx="10" fill="#0a0a0a" stroke="#1f1f1f"/>
+<rect x="1" y="1" width="958" height="298" rx="10" fill="url(#grid)"/>
+<text x="40" y="58" class="lab">INDEX <tspan fill="#404040">/</tspan> <tspan fill="#ededed">CHANDAN11232</tspan></text>
+<text x="40" y="128" class="big">Chandan Garg</text>
+<text x="40" y="160" class="role">Full-stack engineer building AI-native developer tools.</text>
+<text x="40" y="214" class="meta">node.js · typescript · python · langgraph · graph databases</text>
+<text x="40" y="240" class="meta"><tspan fill="#525252">$</tspan> currently shipping <tspan fill="#ededed">voice, graph and research agents</tspan><tspan class="cur" fill="#ededed"> ▍</tspan></text>
+<line x1="520" y1="40" x2="520" y2="260" stroke="#1a1a1a"/>
+<path d="M720,150 L600,72" class="wire"/><path d="M720,150 L600,72" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round" class="b0" filter="url(#glow)"/><path d="M720,150 L868,110" class="wire"/><path d="M720,150 L868,110" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round" class="b1" filter="url(#glow)"/><path d="M720,150 L640,236" class="wire"/><path d="M720,150 L640,236" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round" class="b2" filter="url(#glow)"/><rect x="548" y="57" width="104" height="30" rx="15" fill="#0f0f0f" stroke="#262626"/><circle cx="562" cy="72" r="2.5" fill="#22c55e" class="live" style="animation-delay:0.0s"/><text x="572" y="76" class="hl">VoiceGraph</text><rect x="812" y="95" width="112" height="30" rx="15" fill="#0f0f0f" stroke="#262626"/><circle cx="826" cy="110" r="2.5" fill="#22c55e" class="live" style="animation-delay:0.6s"/><text x="836" y="114" class="hl">GraphSleuth</text><rect x="580" y="221" width="119" height="30" rx="15" fill="#0f0f0f" stroke="#262626"/><circle cx="594" cy="236" r="2.5" fill="#22c55e" class="live" style="animation-delay:1.2s"/><text x="604" y="240" class="hl">ResearchMind</text><circle cx="720" cy="150" r="10" fill="none" stroke="#525252" class="ring"/>
+<circle cx="720" cy="150" r="10" fill="none" stroke="#525252" class="ring" style="animation-delay:1.8s"/>
+<rect x="698" y="128" width="44" height="44" rx="10" fill="#fafafa"/>
+<text x="720" y="155" text-anchor="middle" style="font:700 14px Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#0a0a0a;letter-spacing:.5px">CG</text>
 </svg>

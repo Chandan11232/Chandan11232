@@ -1,94 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#3fb950"/><stop offset="1" stop-color="#d29922"/></linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <path id="fwd" d="M180,170 H728"/>
-    <path id="loop" d="M760,202 V270 H460 V200"/>
-    <path id="out" d="M792,170 H830"/>
-    <clipPath id="type"><rect x="40" y="150" height="50" width="0">
-      <animate attributeName="width" values="0;140;140;0" keyTimes="0;.2;.94;1" dur="9s" repeatCount="indefinite"/>
-    </rect></clipPath>
-  </defs>
-  <style>
-    .t{font:600 14px 'Segoe UI',Ubuntu,Helvetica,sans-serif;fill:#e6edf3}
-    .s{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#8b949e}
-    .h{font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3fb950;letter-spacing:2px}
-    .node{fill:#161b22;stroke:#30363d;stroke-width:1.5}
-    .edge{fill:none;stroke:#21262d;stroke-width:3}
-    .flow{fill:none;stroke:url(#g);stroke-width:2;stroke-dasharray:6 10;animation:dash 1s linear infinite}
-    .lf{fill:none;stroke:#d29922;stroke-width:2;stroke-dasharray:6 10;animation:dash 1s linear infinite}
-    @keyframes dash{to{stroke-dashoffset:-32}}
-    .think{animation:think 1.2s ease-in-out infinite}
-    @keyframes think{0%,100%{opacity:.25}50%{opacity:1}}
-    .rl{transform-box:fill-box;transform-origin:left;animation:rl 9s ease-out infinite}
-    @keyframes rl{0%,70%{transform:scaleX(0)}82%,94%{transform:scaleX(1)}100%{transform:scaleX(0)}}
-    .dot{animation:blink 1.2s infinite}@keyframes blink{50%{opacity:.2}}
-    .cur{animation:blink 1s steps(1) infinite}
-    .it{opacity:0}
-    .it1{animation:it1 9s infinite}.it2{animation:it2 9s infinite}.it3{animation:it3 9s infinite}
-    @keyframes it1{0%,20%{opacity:0}22%,42%{opacity:1}44%,100%{opacity:0}}
-    @keyframes it2{0%,44%{opacity:0}46%,64%{opacity:1}66%,100%{opacity:0}}
-    @keyframes it3{0%,66%{opacity:0}68%,94%{opacity:1}100%{opacity:0}}
-    .dm{animation:dm 9s infinite}
-    @keyframes dm{0%,66%{stroke:#d29922}70%,94%{stroke:#3fb950}100%{stroke:#d29922}}
-    .src{opacity:0;animation:src 3s infinite}
-    @keyframes src{0%,10%{opacity:0}30%,80%{opacity:1}100%{opacity:0}}
-  </style>
-  <rect width="960" height="340" rx="14" fill="#0d1117" stroke="#30363d"/>
-  <text x="30" y="40" class="h">RESEARCHMIND · ITERATIVE LANGGRAPH RESEARCH</text>
-  <rect x="808" y="24" width="122" height="24" rx="12" fill="#1f2a1f" stroke="#2ea043"/>
-  <circle class="dot" cx="824" cy="36" r="4" fill="#3fb950"/>
-  <text x="836" y="40" class="s" style="fill:#3fb950">researching</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" fill="none">
+<defs>
+<pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#1a1a1a"/></pattern>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0a0a" stop-opacity="0"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient>
+<filter id="glow" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 
-  <use href="#fwd" class="edge"/><use href="#fwd" class="flow"/>
-  <use href="#loop" class="edge"/><use href="#loop" class="lf"/>
-  <use href="#out" class="edge"/><use href="#out" class="flow"/>
+</defs>
+<style>
+.lab{font:500 10.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#737373;letter-spacing:1.6px}
+.t{font:600 13.5px Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#ededed}
+.s{font:400 10.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#737373}
+.n{font:500 10px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#525252}
+.log{font:400 11.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#a3a3a3}
+.k{fill:#ededed}
+.node{fill:#0f0f0f;stroke:#262626;stroke-width:1}
+.wire{fill:none;stroke:#262626;stroke-width:1}
+.dash{fill:none;stroke:#333;stroke-width:1;stroke-dasharray:3 4}
+.live{animation:live 2.4s ease-in-out infinite}
+@keyframes live{0%,100%{opacity:1}50%{opacity:.35}}
 
-  <!-- question -->
-  <rect class="node" x="30" y="125" width="150" height="90" rx="12" stroke="#3fb950"/>
-  <text x="44" y="147" class="s" style="fill:#3fb950">❯ research</text>
-  <g clip-path="url(#type)">
-    <text x="44" y="170" class="s" style="fill:#e6edf3;font-size:12px">How do diffusion</text>
-    <text x="44" y="187" class="s" style="fill:#e6edf3;font-size:12px">models scale?</text>
-  </g>
-  <text x="44" y="204" class="s cur" style="fill:#3fb950">▋</text>
-
-  <rect class="node" x="220" y="140" width="140" height="60" rx="12"/>
-  <text x="234" y="165" class="t">🧭 Plan</text><text x="234" y="185" class="s">Llama 3.3 · Groq</text>
-
-  <rect class="node" x="400" y="140" width="140" height="60" rx="12"/>
-  <text x="414" y="165" class="t">🔎 Tavily Search</text><text x="414" y="185" class="s">web sources</text>
-  <g class="s" style="fill:#d29922">
-    <text x="404" y="128" class="src">+ arxiv.org</text>
-    <text x="470" y="110" class="src" style="animation-delay:1s">+ blog</text>
-    <text x="490" y="128" class="src" style="animation-delay:2s">+ docs</text>
-  </g>
-
-  <rect class="node" x="580" y="140" width="130" height="60" rx="12"/>
-  <text x="594" y="165" class="t">🧠 Analyze</text><text x="594" y="185" class="s">gaps<tspan class="think">…</tspan></text>
-
-  <!-- decision -->
-  <polygon class="dm" points="760,138 792,170 760,202 728,170" fill="#161b22" stroke-width="2"/>
-  <text x="760" y="174" text-anchor="middle" class="s" style="fill:#e6edf3">done?</text>
-  <text x="560" y="290" class="s it it1" style="fill:#d29922">↺ iteration 1 · refine query</text>
-  <text x="560" y="290" class="s it it2" style="fill:#d29922">↺ iteration 2 · refine query</text>
-  <text x="560" y="290" class="s it it3" style="fill:#3fb950">✓ iteration 3 · enough evidence</text>
-
-  <!-- report -->
-  <rect class="node" x="830" y="110" width="100" height="125" rx="12" stroke="#3fb950"/>
-  <text x="844" y="132" class="t">📝 Report</text>
-  <g fill="#30363d">
-    <rect class="rl" x="844" y="148" width="72" height="5" rx="2" fill="#3fb950"/>
-    <rect class="rl" x="844" y="162" width="60" height="5" rx="2" style="animation-delay:.2s"/>
-    <rect class="rl" x="844" y="176" width="68" height="5" rx="2" style="animation-delay:.4s"/>
-    <rect class="rl" x="844" y="190" width="50" height="5" rx="2" style="animation-delay:.6s"/>
-    <rect class="rl" x="844" y="204" width="64" height="5" rx="2" fill="#d29922" style="animation-delay:.8s"/>
-  </g>
-
-  <text x="30" y="310" class="s">FastAPI · LangGraph · Groq (Llama 3.3) · Tavily · Next.js terminal UI</text>
-
-  <g filter="url(#glow)">
-    <circle r="5" fill="#3fb950"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#fwd"/></animateMotion></circle>
-    <circle r="5" fill="#d29922"><animateMotion dur="2.4s" begin="1s" repeatCount="indefinite"><mpath href="#loop"/></animateMotion></circle>
-  </g>
+.beam{fill:none;stroke:#fafafa;stroke-width:1.5;stroke-linecap:round;stroke-dasharray:60 1180.0;animation:beam 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes beam{0%{stroke-dashoffset:60}70%,100%{stroke-dashoffset:-780.0}}
+.hot{animation:hot 7.0s infinite}
+@keyframes hot{0%,4%{stroke:#262626}8%{stroke:#d4d4d4}20%,100%{stroke:#262626}}
+.dot{animation:dot 7.0s infinite}
+@keyframes dot{0%,4%{fill:#262626}8%{fill:#fafafa}22%,100%{fill:#262626}}
+.lg{opacity:0}
+@keyframes lg0{0%{opacity:0}0.00%{opacity:0}1.50%{opacity:1}15.17%{opacity:1}16.67%{opacity:0}100%{opacity:0}}
+.lg0{animation:lg0 21.0s infinite}
+@keyframes lg1{0%{opacity:0}16.66%{opacity:0}18.17%{opacity:1}31.83%{opacity:1}33.33%{opacity:0}100%{opacity:0}}
+.lg1{animation:lg1 21.0s infinite}
+@keyframes lg2{0%{opacity:0}33.32%{opacity:0}34.83%{opacity:1}48.50%{opacity:1}50.00%{opacity:0}100%{opacity:0}}
+.lg2{animation:lg2 21.0s infinite}
+@keyframes lg3{0%{opacity:0}49.99%{opacity:0}51.50%{opacity:1}65.17%{opacity:1}66.67%{opacity:0}100%{opacity:0}}
+.lg3{animation:lg3 21.0s infinite}
+@keyframes lg4{0%{opacity:0}66.66%{opacity:0}68.17%{opacity:1}81.83%{opacity:1}83.33%{opacity:0}100%{opacity:0}}
+.lg4{animation:lg4 21.0s infinite}
+@keyframes lg5{0%{opacity:0}83.32%{opacity:0}84.83%{opacity:1}98.50%{opacity:1}100.00%{opacity:0}100%{opacity:0}}
+.lg5{animation:lg5 21.0s infinite}
+</style>
+<rect x=".5" y=".5" width="959" height="319" rx="10" fill="#0a0a0a" stroke="#1f1f1f"/>
+<rect x="1" y="1" width="958" height="318" rx="10" fill="url(#grid)"/>
+<text x="28" y="38" class="lab">03 <tspan fill="#404040">/</tspan> <tspan fill="#ededed">RESEARCHMIND</tspan></text>
+<circle cx="846" cy="34.5" r="3" fill="#22c55e" class="live"/>
+<text x="932" y="38" text-anchor="end" class="lab">ITERATING</text>
+<line x1="28" y1="56" x2="932" y2="56" stroke="#1a1a1a"/><path d="M90.0,136.0 H870.0" class="wire"/><path d="M714.0,168 V196 H402.0 V168" class="dash"/><rect x="463.0" y="188" width="190" height="16" fill="#0a0a0a"/><text x="558.0" y="200" text-anchor="middle" class="s" style="fill:#525252">refine query · iterate</text><path d="M90.0,136.0 H870.0" class="beam" filter="url(#glow)"/><g><rect x="28.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:-0.42s"/>
+<text x="42.0" y="124" class="n">01</text>
+<circle cx="138.0" cy="120" r="2.2" class="dot" style="animation-delay:-0.42s"/>
+<text x="42.0" y="144" class="t">Question</text>
+<text x="42.0" y="159" class="s">terminal ui</text></g><g><rect x="184.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:0.56s"/>
+<text x="198.0" y="124" class="n">02</text>
+<circle cx="294.0" cy="120" r="2.2" class="dot" style="animation-delay:0.56s"/>
+<text x="198.0" y="144" class="t">Plan</text>
+<text x="198.0" y="159" class="s">llama 3.3</text></g><g><rect x="340.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:1.54s"/>
+<text x="354.0" y="124" class="n">03</text>
+<circle cx="450.0" cy="120" r="2.2" class="dot" style="animation-delay:1.54s"/>
+<text x="354.0" y="144" class="t">Search</text>
+<text x="354.0" y="159" class="s">tavily</text></g><g><rect x="496.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:2.52s"/>
+<text x="510.0" y="124" class="n">04</text>
+<circle cx="606.0" cy="120" r="2.2" class="dot" style="animation-delay:2.52s"/>
+<text x="510.0" y="144" class="t">Analyze</text>
+<text x="510.0" y="159" class="s">llama 3.3</text></g><g><rect x="652.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:3.50s"/>
+<text x="666.0" y="124" class="n">05</text>
+<circle cx="762.0" cy="120" r="2.2" class="dot" style="animation-delay:3.50s"/>
+<text x="666.0" y="144" class="t">Decide</text>
+<text x="666.0" y="159" class="s">sufficient?</text></g><g><rect x="808.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:4.48s"/>
+<text x="822.0" y="124" class="n">06</text>
+<circle cx="918.0" cy="120" r="2.2" class="dot" style="animation-delay:4.48s"/>
+<text x="822.0" y="144" class="t">Report</text>
+<text x="822.0" y="159" class="s">cited summary</text></g><rect x="28" y="240" width="904" height="52" rx="6" fill="#0d0d0d" stroke="#1f1f1f"/><text x="44" y="271" class="log" fill="#525252" style="fill:#525252">$</text><text x="62" y="271" class="log lg lg0" xml:space="preserve"><tspan class="k">plan     </tspan>split into 3 sub-questions</text><text x="62" y="271" class="log lg lg1" xml:space="preserve"><tspan class="k">search   </tspan>tavily · 8 sources retrieved</text><text x="62" y="271" class="log lg lg2" xml:space="preserve"><tspan class="k">analyze  </tspan>gap found → compute-optimal scaling</text><text x="62" y="271" class="log lg lg3" xml:space="preserve"><tspan class="k">loop     </tspan>iteration 2 · refined query</text><text x="62" y="271" class="log lg lg4" xml:space="preserve"><tspan class="k">decide   </tspan>evidence sufficient</text><text x="62" y="271" class="log lg lg5" xml:space="preserve"><tspan class="k">report   </tspan>written with inline citations</text>
 </svg>

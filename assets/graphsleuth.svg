@@ -1,114 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#39d0d8"/><stop offset="1" stop-color="#58a6ff"/></linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <path id="e1" d="M180,180 H215"/>
-    <path id="e2" d="M475,180 H505"/>
-    <path id="e3" d="M655,180 H690"/>
-    <path id="mem" d="M810,250 V310 H345 V294"/>
-    <path id="trace" d="M250,120 L320,100 L390,140 L360,200 L430,250"/>
-    <clipPath id="cy"><rect x="230" y="264" width="0" height="20">
-      <animate attributeName="width" values="0;240;240;0" keyTimes="0;.35;.92;1" dur="8s" repeatCount="indefinite"/>
-    </rect></clipPath>
-  </defs>
-  <style>
-    .t{font:600 14px 'Segoe UI',Ubuntu,Helvetica,sans-serif;fill:#e6edf3}
-    .s{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#8b949e}
-    .h{font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#39d0d8;letter-spacing:2px}
-    .node{fill:#161b22;stroke:#30363d;stroke-width:1.5}
-    .edge{fill:none;stroke:#21262d;stroke-width:3}
-    .flow{fill:none;stroke:url(#g);stroke-width:2;stroke-dasharray:6 10;animation:dash 1s linear infinite}
-    @keyframes dash{to{stroke-dashoffset:-32}}
-    .ke{stroke:#30363d;stroke-width:1.5}
-    .kh{fill:none;stroke:#39d0d8;stroke-width:2.5;stroke-dasharray:240;stroke-dashoffset:240;animation:draw 8s ease-in-out infinite}
-    @keyframes draw{0%,10%{stroke-dashoffset:240}40%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:240}}
-    .kn{transform-box:fill-box;transform-origin:center;animation:pop 3s ease-in-out infinite}
-    @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
-    .alert{animation:alert 1.5s ease-in-out infinite}
-    @keyframes alert{0%,100%{opacity:1}50%{opacity:.4}}
-    .ring{fill:none;stroke:#f85149;transform-box:fill-box;transform-origin:center;animation:ring 1.5s ease-out infinite}
-    @keyframes ring{from{transform:scale(1);opacity:1}to{transform:scale(3);opacity:0}}
-    .rk{transform-box:fill-box;transform-origin:left;animation:rk 8s ease-out infinite}
-    @keyframes rk{0%,35%{transform:scaleX(0)}55%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
-    .i{opacity:0}
-    .i1{animation:i1 8s infinite}.i2{animation:i2 8s infinite}.i3{animation:i3 8s infinite}
-    @keyframes i1{0%,55%{opacity:0}60%,92%{opacity:1}100%{opacity:0}}
-    @keyframes i2{0%,65%{opacity:0}70%,92%{opacity:1}100%{opacity:0}}
-    @keyframes i3{0%,75%{opacity:0}80%,92%{opacity:1}100%{opacity:0}}
-    .dot{animation:blink 1.2s infinite}@keyframes blink{50%{opacity:.2}}
-    .memf{fill:none;stroke:#a371f7;stroke-width:1.5;stroke-dasharray:4 8;animation:dash 1.4s linear infinite}
-  </style>
-  <rect width="960" height="360" rx="14" fill="#0d1117" stroke="#30363d"/>
-  <text x="30" y="40" class="h">GRAPHSLEUTH · BUG → ROOT CAUSE → VERIFIED PR</text>
-  <rect x="808" y="24" width="122" height="24" rx="12" fill="#10262a" stroke="#39d0d8"/>
-  <circle class="dot" cx="824" cy="36" r="4" fill="#39d0d8"/>
-  <text x="836" y="40" class="s" style="fill:#39d0d8">investigating</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" fill="none">
+<defs>
+<pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#1a1a1a"/></pattern>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0a0a" stop-opacity="0"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient>
+<filter id="glow" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 
-  <g><use href="#e1" class="edge"/><use href="#e2" class="edge"/><use href="#e3" class="edge"/>
-     <use href="#e1" class="flow"/><use href="#e2" class="flow"/><use href="#e3" class="flow"/></g>
+</defs>
+<style>
+.lab{font:500 10.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#737373;letter-spacing:1.6px}
+.t{font:600 13.5px Inter,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;fill:#ededed}
+.s{font:400 10.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#737373}
+.n{font:500 10px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#525252}
+.log{font:400 11.5px 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#a3a3a3}
+.k{fill:#ededed}
+.node{fill:#0f0f0f;stroke:#262626;stroke-width:1}
+.wire{fill:none;stroke:#262626;stroke-width:1}
+.dash{fill:none;stroke:#333;stroke-width:1;stroke-dasharray:3 4}
+.live{animation:live 2.4s ease-in-out infinite}
+@keyframes live{0%,100%{opacity:1}50%{opacity:.35}}
 
-  <!-- bug report -->
-  <rect class="node" x="30" y="100" width="150" height="160" rx="12" stroke="#f85149"/>
-  <text x="44" y="124" class="t">🐞 Bug report</text>
-  <text x="44" y="150" class="s" style="fill:#f85149">TypeError: None</text>
-  <text x="44" y="170" class="s">  at checkout.py:88</text>
-  <text x="44" y="188" class="s">  at cart.total()</text>
-  <text x="44" y="206" class="s">  at price.apply()</text>
-  <text x="44" y="240" class="s">stack trace parsed ✓</text>
-
-  <!-- code graph -->
-  <rect x="215" y="66" width="260" height="228" rx="14" fill="#0b141a" stroke="#1f3a40" stroke-dasharray="4 4"/>
-  <text x="227" y="84" class="s">FalkorDB code graph</text>
-  <g>
-    <line class="ke" x1="250" y1="120" x2="320" y2="100"/><line class="ke" x1="320" y1="100" x2="390" y2="140"/>
-    <line class="ke" x1="250" y1="120" x2="290" y2="180"/><line class="ke" x1="390" y1="140" x2="360" y2="200"/>
-    <line class="ke" x1="290" y1="180" x2="360" y2="200"/><line class="ke" x1="360" y1="200" x2="430" y2="250"/>
-    <line class="ke" x1="290" y1="180" x2="250" y2="235"/><line class="ke" x1="430" y1="110" x2="390" y2="140"/>
-    <line class="ke" x1="250" y1="235" x2="340" y2="250"/><line class="ke" x1="340" y1="250" x2="430" y2="250"/>
-    <use href="#trace" class="kh"/>
-  </g>
-  <g>
-    <circle class="kn" cx="250" cy="120" r="8" fill="#58a6ff"/>
-    <circle class="kn" cx="320" cy="100" r="6" fill="#a371f7" style="animation-delay:.4s"/>
-    <circle class="kn" cx="390" cy="140" r="7" fill="#39d0d8" style="animation-delay:.8s"/>
-    <circle class="kn" cx="430" cy="110" r="5" fill="#3fb950" style="animation-delay:1s"/>
-    <circle class="kn" cx="290" cy="180" r="7" fill="#58a6ff" style="animation-delay:1.2s"/>
-    <circle class="kn" cx="360" cy="200" r="8" fill="#39d0d8" style="animation-delay:1.6s"/>
-    <circle class="kn" cx="250" cy="235" r="6" fill="#a371f7" style="animation-delay:2s"/>
-    <circle class="kn" cx="340" cy="250" r="6" fill="#3fb950" style="animation-delay:2.4s"/>
-    <circle class="ring" cx="430" cy="250" r="8" stroke-width="2"/>
-    <circle class="alert" cx="430" cy="250" r="8" fill="#f85149"/>
-  </g>
-  <g filter="url(#glow)">
-    <g><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#trace"/></animateMotion>
-      <circle r="13" fill="none" stroke="#e6edf3" stroke-width="2"/>
-      <line x1="9" y1="9" x2="18" y2="18" stroke="#e6edf3" stroke-width="3" stroke-linecap="round"/>
-    </g>
-  </g>
-  <text x="230" y="279" class="s" style="fill:#39d0d8" clip-path="url(#cy)">MATCH (f)-[:CALLS*1..3]-&gt;(g) …</text>
-
-  <!-- suspects -->
-  <rect class="node" x="505" y="100" width="150" height="160" rx="12"/>
-  <text x="519" y="124" class="t">🎯 Suspects</text>
-  <text x="519" y="150" class="s">price.apply()</text>
-  <rect x="519" y="156" width="120" height="6" rx="3" fill="#21262d"/><rect class="rk" x="519" y="156" width="112" height="6" rx="3" fill="#f85149"/>
-  <text x="519" y="182" class="s">cart.total()</text>
-  <rect x="519" y="188" width="120" height="6" rx="3" fill="#21262d"/><rect class="rk" x="519" y="188" width="70" height="6" rx="3" fill="#d29922" style="animation-delay:.2s"/>
-  <text x="519" y="214" class="s">coupon.load()</text>
-  <rect x="519" y="220" width="120" height="6" rx="3" fill="#21262d"/><rect class="rk" x="519" y="220" width="38" height="6" rx="3" fill="#39d0d8" style="animation-delay:.4s"/>
-  <text x="519" y="248" class="s">graph-ranked</text>
-
-  <!-- verify & ship -->
-  <rect class="node" x="690" y="100" width="240" height="150" rx="12" stroke="#3fb950"/>
-  <text x="704" y="124" class="t">🧪 Sandbox verify → PR</text>
-  <text x="704" y="152" class="s i i1" style="fill:#f85149">pytest before patch  ✗ 1 failed</text>
-  <text x="704" y="176" class="s i i2" style="fill:#3fb950">pytest after patch   ✓ passed</text>
-  <text x="704" y="200" class="s i i3" style="fill:#e6edf3">PR draft + reviewers ready</text>
-  <text x="704" y="224" class="s i i3" style="fill:#d29922">⏸ awaiting human approval</text>
-
-  <!-- memory loop -->
-  <path d="M810,250 V310 H345 V294" class="edge"/>
-  <use href="#mem" class="memf"/>
-  <text x="520" y="330" class="s" style="fill:#a371f7">↺ remember root cause → graph</text>
-  <g filter="url(#glow)"><circle r="4" fill="#a371f7"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#mem"/></animateMotion></circle></g>
+.beam{fill:none;stroke:#fafafa;stroke-width:1.5;stroke-linecap:round;stroke-dasharray:60 1180.0;animation:beam 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes beam{0%{stroke-dashoffset:60}70%,100%{stroke-dashoffset:-780.0}}
+.hot{animation:hot 7.0s infinite}
+@keyframes hot{0%,4%{stroke:#262626}8%{stroke:#d4d4d4}20%,100%{stroke:#262626}}
+.dot{animation:dot 7.0s infinite}
+@keyframes dot{0%,4%{fill:#262626}8%{fill:#fafafa}22%,100%{fill:#262626}}
+.lg{opacity:0}
+@keyframes lg0{0%{opacity:0}0.00%{opacity:0}1.50%{opacity:1}15.17%{opacity:1}16.67%{opacity:0}100%{opacity:0}}
+.lg0{animation:lg0 21.0s infinite}
+@keyframes lg1{0%{opacity:0}16.66%{opacity:0}18.17%{opacity:1}31.83%{opacity:1}33.33%{opacity:0}100%{opacity:0}}
+.lg1{animation:lg1 21.0s infinite}
+@keyframes lg2{0%{opacity:0}33.32%{opacity:0}34.83%{opacity:1}48.50%{opacity:1}50.00%{opacity:0}100%{opacity:0}}
+.lg2{animation:lg2 21.0s infinite}
+@keyframes lg3{0%{opacity:0}49.99%{opacity:0}51.50%{opacity:1}65.17%{opacity:1}66.67%{opacity:0}100%{opacity:0}}
+.lg3{animation:lg3 21.0s infinite}
+@keyframes lg4{0%{opacity:0}66.66%{opacity:0}68.17%{opacity:1}81.83%{opacity:1}83.33%{opacity:0}100%{opacity:0}}
+.lg4{animation:lg4 21.0s infinite}
+@keyframes lg5{0%{opacity:0}83.32%{opacity:0}84.83%{opacity:1}98.50%{opacity:1}100.00%{opacity:0}100%{opacity:0}}
+.lg5{animation:lg5 21.0s infinite}
+</style>
+<rect x=".5" y=".5" width="959" height="319" rx="10" fill="#0a0a0a" stroke="#1f1f1f"/>
+<rect x="1" y="1" width="958" height="318" rx="10" fill="url(#grid)"/>
+<text x="28" y="38" class="lab">02 <tspan fill="#404040">/</tspan> <tspan fill="#ededed">GRAPHSLEUTH</tspan></text>
+<circle cx="813" cy="34.5" r="3" fill="#22c55e" class="live"/>
+<text x="932" y="38" text-anchor="end" class="lab">INVESTIGATING</text>
+<line x1="28" y1="56" x2="932" y2="56" stroke="#1a1a1a"/><path d="M90.0,136.0 H870.0" class="wire"/><path d="M870.0,168 V196 H402.0 V168" class="dash"/><rect x="466.0" y="188" width="340" height="16" fill="#0a0a0a"/><text x="636.0" y="200" text-anchor="middle" class="s" style="fill:#525252">memory · confirmed root causes feed future traces</text><path d="M90.0,136.0 H870.0" class="beam" filter="url(#glow)"/><g><rect x="28.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:-0.42s"/>
+<text x="42.0" y="124" class="n">01</text>
+<circle cx="138.0" cy="120" r="2.2" class="dot" style="animation-delay:-0.42s"/>
+<text x="42.0" y="144" class="t">Ingest</text>
+<text x="42.0" y="159" class="s">tree-sitter</text></g><g><rect x="184.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:0.56s"/>
+<text x="198.0" y="124" class="n">02</text>
+<circle cx="294.0" cy="120" r="2.2" class="dot" style="animation-delay:0.56s"/>
+<text x="198.0" y="144" class="t">Locate</text>
+<text x="198.0" y="159" class="s">stack frames</text></g><g><rect x="340.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:1.54s"/>
+<text x="354.0" y="124" class="n">03</text>
+<circle cx="450.0" cy="120" r="2.2" class="dot" style="animation-delay:1.54s"/>
+<text x="354.0" y="144" class="t">Trace</text>
+<text x="354.0" y="159" class="s">cypher paths</text></g><g><rect x="496.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:2.52s"/>
+<text x="510.0" y="124" class="n">04</text>
+<circle cx="606.0" cy="120" r="2.2" class="dot" style="animation-delay:2.52s"/>
+<text x="510.0" y="144" class="t">Rank</text>
+<text x="510.0" y="159" class="s">graph-scored</text></g><g><rect x="652.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:3.50s"/>
+<text x="666.0" y="124" class="n">05</text>
+<circle cx="762.0" cy="120" r="2.2" class="dot" style="animation-delay:3.50s"/>
+<text x="666.0" y="144" class="t">Verify</text>
+<text x="666.0" y="159" class="s">sandbox tests</text></g><g><rect x="808.0" y="104" width="124" height="64" rx="6" class="node hot" style="animation-delay:4.48s"/>
+<text x="822.0" y="124" class="n">06</text>
+<circle cx="918.0" cy="120" r="2.2" class="dot" style="animation-delay:4.48s"/>
+<text x="822.0" y="144" class="t">Ship</text>
+<text x="822.0" y="159" class="s">PR + approval</text></g><rect x="28" y="240" width="904" height="52" rx="6" fill="#0d0d0d" stroke="#1f1f1f"/><text x="44" y="271" class="log" fill="#525252" style="fill:#525252">$</text><text x="62" y="271" class="log lg lg0" xml:space="preserve"><tspan class="k">ingest   </tspan>functions · calls · tests · commits → falkordb</text><text x="62" y="271" class="log lg lg1" xml:space="preserve"><tspan class="k">locate   </tspan>TypeError at checkout.py:88 → 3 entry points</text><text x="62" y="271" class="log lg lg2" xml:space="preserve"><tspan class="k">trace    </tspan>MATCH (f)-[:CALLS*1..3]-&gt;(g) RETURN path</text><text x="62" y="271" class="log lg lg3" xml:space="preserve"><tspan class="k">rank     </tspan>price.apply() 0.91 · cart.total() 0.62</text><text x="62" y="271" class="log lg lg4" xml:space="preserve"><tspan class="k">verify   </tspan>before: 1 failed · after: passed</text><text x="62" y="271" class="log lg lg5" xml:space="preserve"><tspan class="k">ship     </tspan>PR drafted · reviewers from CODEOWNERS · awaiting approval</text>
 </svg>
