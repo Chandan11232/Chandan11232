@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#3fb950"/><stop offset="1" stop-color="#d29922"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <path id="fwd" d="M180,170 H728"/>
+    <path id="loop" d="M760,202 V270 H460 V200"/>
+    <path id="out" d="M792,170 H830"/>
+    <clipPath id="type"><rect x="40" y="150" height="50" width="0">
+      <animate attributeName="width" values="0;140;140;0" keyTimes="0;.2;.94;1" dur="9s" repeatCount="indefinite"/>
+    </rect></clipPath>
+  </defs>
+  <style>
+    .t{font:600 14px 'Segoe UI',Ubuntu,Helvetica,sans-serif;fill:#e6edf3}
+    .s{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#8b949e}
+    .h{font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#3fb950;letter-spacing:2px}
+    .node{fill:#161b22;stroke:#30363d;stroke-width:1.5}
+    .edge{fill:none;stroke:#21262d;stroke-width:3}
+    .flow{fill:none;stroke:url(#g);stroke-width:2;stroke-dasharray:6 10;animation:dash 1s linear infinite}
+    .lf{fill:none;stroke:#d29922;stroke-width:2;stroke-dasharray:6 10;animation:dash 1s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-32}}
+    .think{animation:think 1.2s ease-in-out infinite}
+    @keyframes think{0%,100%{opacity:.25}50%{opacity:1}}
+    .rl{transform-box:fill-box;transform-origin:left;animation:rl 9s ease-out infinite}
+    @keyframes rl{0%,70%{transform:scaleX(0)}82%,94%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+    .dot{animation:blink 1.2s infinite}@keyframes blink{50%{opacity:.2}}
+    .cur{animation:blink 1s steps(1) infinite}
+    .it{opacity:0}
+    .it1{animation:it1 9s infinite}.it2{animation:it2 9s infinite}.it3{animation:it3 9s infinite}
+    @keyframes it1{0%,20%{opacity:0}22%,42%{opacity:1}44%,100%{opacity:0}}
+    @keyframes it2{0%,44%{opacity:0}46%,64%{opacity:1}66%,100%{opacity:0}}
+    @keyframes it3{0%,66%{opacity:0}68%,94%{opacity:1}100%{opacity:0}}
+    .dm{animation:dm 9s infinite}
+    @keyframes dm{0%,66%{stroke:#d29922}70%,94%{stroke:#3fb950}100%{stroke:#d29922}}
+    .src{opacity:0;animation:src 3s infinite}
+    @keyframes src{0%,10%{opacity:0}30%,80%{opacity:1}100%{opacity:0}}
+  </style>
+  <rect width="960" height="340" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <text x="30" y="40" class="h">RESEARCHMIND · ITERATIVE LANGGRAPH RESEARCH</text>
+  <rect x="808" y="24" width="122" height="24" rx="12" fill="#1f2a1f" stroke="#2ea043"/>
+  <circle class="dot" cx="824" cy="36" r="4" fill="#3fb950"/>
+  <text x="836" y="40" class="s" style="fill:#3fb950">researching</text>
+
+  <use href="#fwd" class="edge"/><use href="#fwd" class="flow"/>
+  <use href="#loop" class="edge"/><use href="#loop" class="lf"/>
+  <use href="#out" class="edge"/><use href="#out" class="flow"/>
+
+  <!-- question -->
+  <rect class="node" x="30" y="125" width="150" height="90" rx="12" stroke="#3fb950"/>
+  <text x="44" y="147" class="s" style="fill:#3fb950">❯ research</text>
+  <g clip-path="url(#type)">
+    <text x="44" y="170" class="s" style="fill:#e6edf3;font-size:12px">How do diffusion</text>
+    <text x="44" y="187" class="s" style="fill:#e6edf3;font-size:12px">models scale?</text>
+  </g>
+  <text x="44" y="204" class="s cur" style="fill:#3fb950">▋</text>
+
+  <rect class="node" x="220" y="140" width="140" height="60" rx="12"/>
+  <text x="234" y="165" class="t">🧭 Plan</text><text x="234" y="185" class="s">Llama 3.3 · Groq</text>
+
+  <rect class="node" x="400" y="140" width="140" height="60" rx="12"/>
+  <text x="414" y="165" class="t">🔎 Tavily Search</text><text x="414" y="185" class="s">web sources</text>
+  <g class="s" style="fill:#d29922">
+    <text x="404" y="128" class="src">+ arxiv.org</text>
+    <text x="470" y="110" class="src" style="animation-delay:1s">+ blog</text>
+    <text x="490" y="128" class="src" style="animation-delay:2s">+ docs</text>
+  </g>
+
+  <rect class="node" x="580" y="140" width="130" height="60" rx="12"/>
+  <text x="594" y="165" class="t">🧠 Analyze</text><text x="594" y="185" class="s">gaps<tspan class="think">…</tspan></text>
+
+  <!-- decision -->
+  <polygon class="dm" points="760,138 792,170 760,202 728,170" fill="#161b22" stroke-width="2"/>
+  <text x="760" y="174" text-anchor="middle" class="s" style="fill:#e6edf3">done?</text>
+  <text x="560" y="290" class="s it it1" style="fill:#d29922">↺ iteration 1 · refine query</text>
+  <text x="560" y="290" class="s it it2" style="fill:#d29922">↺ iteration 2 · refine query</text>
+  <text x="560" y="290" class="s it it3" style="fill:#3fb950">✓ iteration 3 · enough evidence</text>
+
+  <!-- report -->
+  <rect class="node" x="830" y="110" width="100" height="125" rx="12" stroke="#3fb950"/>
+  <text x="844" y="132" class="t">📝 Report</text>
+  <g fill="#30363d">
+    <rect class="rl" x="844" y="148" width="72" height="5" rx="2" fill="#3fb950"/>
+    <rect class="rl" x="844" y="162" width="60" height="5" rx="2" style="animation-delay:.2s"/>
+    <rect class="rl" x="844" y="176" width="68" height="5" rx="2" style="animation-delay:.4s"/>
+    <rect class="rl" x="844" y="190" width="50" height="5" rx="2" style="animation-delay:.6s"/>
+    <rect class="rl" x="844" y="204" width="64" height="5" rx="2" fill="#d29922" style="animation-delay:.8s"/>
+  </g>
+
+  <text x="30" y="310" class="s">FastAPI · LangGraph · Groq (Llama 3.3) · Tavily · Next.js terminal UI</text>
+
+  <g filter="url(#glow)">
+    <circle r="5" fill="#3fb950"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#fwd"/></animateMotion></circle>
+    <circle r="5" fill="#d29922"><animateMotion dur="2.4s" begin="1s" repeatCount="indefinite"><mpath href="#loop"/></animateMotion></circle>
+  </g>
+</svg>
